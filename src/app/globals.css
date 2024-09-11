@@ -16,18 +16,243 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
+
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+}
+
+@keyframes scaleIn {
+  0% {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+}
+
+.scale-in {
+  animation: scaleIn 1s ease-in-out forwards;
+}
+
+/* Hide default dots */
+.slick-dots {
+  bottom: 30px;
+  /* Adjust position from the bottom */
+  display: flex !important;
+  /* Ensure dots are displayed in a row */
+  justify-content: center;
+  /* Center dots horizontally */
+  align-items: center;
+  /* Align dots vertically */
+}
+
+/* Style each dot */
+.slick-dots li {
+  margin: 0 5px;
+  /* Space between lines */
+}
+
+/* Style dot buttons */
+.slick-dots li button {
+  background-color: transparent;
+  /* Hide the default dot */
+  border: none;
+  /* Remove default button border */
+  width: 10px;
+  /* Width of the line */
+  height: 10px;
+  /* Height of the line */
+  padding: 0;
+  /* Remove padding */
+  position: relative;
+  /* Allow for positioning of the line */
+}
+
+/* Add a line under the dots */
+.slick-dots li::before {
+  content: "";
+  display: block;
+  width: 10px;
+  /* Width of the line */
+  height: 3px;
+  /* Height of the line */
+  background-color: #000;
+  /* Line color */
+  border-radius: 0;
+  /* Square line edges */
+}
+
+/* Style for the active dot */
+.slick-dots li.slick-active::before {
+  background-color: #ff0000;
+  /* Color for the active line */
+}
+
+/* Hide default dots */
+.slick-dots {
+  bottom: 30px;
+  /* Adjust position from the bottom */
+  display: flex !important;
+  /* Ensure lines are displayed in a row */
+  justify-content: center;
+  /* Center lines horizontally */
+  align-items: center;
+  /* Align lines vertically */
+}
+
+/* Hide default dot items */
+.slick-dots li {
+  margin: 0 5px;
+  /* Space between lines */
+  position: relative;
+  /* Position relative for line styling */
+  width: 10px;
+  /* Width of the line container */
+  height: 3px;
+  /* Height of the line */
+}
+
+/* Hide dot button */
+.slick-dots li button {
+  background-color: transparent;
+  /* Hide the default dot */
+  border: none;
+  /* Remove default button border */
+  width: 10px;
+  /* Width of the line */
+  height: 3px;
+  /* Height of the line */
+  padding: 0;
+  /* Remove padding */
+  position: absolute;
+  /* Position line inside the container */
+  top: 50%;
+  /* Vertically center line */
+  left: 50%;
+  /* Horizontally center line */
+  transform: translate(-50%, -50%);
+  /* Center line precisely */
+}
+
+/* Add a line under the dots */
+.slick-dots li::before {
+  content: "";
+  display: block;
+  width: 10px;
+  /* Width of the line */
+  height: 3px;
+  /* Height of the line */
+  background-color: #000;
+  /* Line color */
+  border-radius: 0;
+  /* Square line edges */
+}
+
+/* Style for the active dot */
+.slick-dots li.slick-active::before {
+  background-color: #ff0000;
+  /* Color for the active line */
+}
+
+
+/* Hide default dots */
+.slick-dots {
+  bottom: 30px;
+  /* Adjust position from the bottom */
+  display: flex !important;
+  /* Ensure lines are displayed in a row */
+  justify-content: center;
+  /* Center lines horizontally */
+  align-items: center;
+  /* Align lines vertically */
+}
+
+/* Hide default dot items */
+.slick-dots li {
+  margin: 0 5px;
+  /* Space between lines */
+  position: relative;
+  /* Position relative for line styling */
+  width: 10px;
+  /* Width of the line container */
+  height: 3px;
+  /* Height of the line */
+}
+
+/* Hide dot button */
+.slick-dots li button {
+  background-color: transparent;
+  /* Hide the default dot */
+  border: none;
+  /* Remove default button border */
+  width: 10px;
+  /* Width of the line */
+  height: 3px;
+  /* Height of the line */
+  padding: 0;
+  /* Remove padding */
+  position: absolute;
+  /* Position line inside the container */
+  top: -100%;
+  /* Vertically center line */
+  left: 50%;
+  /* Horizontally center line */
+  transform: translate(-50%, -100%);
+  /* Center line precisely */
+}
+
+.home_slider_container ul.slick-dots {
+  position: absolute;
+  bottom: -80px;
+}
+
+/* Add a line under the dots */
+.slick-dots li::before {
+  content: "";
+  display: block;
+  width: 20px;
+  /* Width of the line */
+  height: 3px;
+  /* Height of the line */
+  background-color: #000;
+  /* Line color */
+  border-radius: 0;
+  /* Square line edges */
+}
+
+/* Style for the active dot */
+.slick-dots li.slick-active::before {
+  background-color: #ff0000;
+  /* Color for the active line */
+}
+
+
+.hero_banner_sec.slick-active .hero_banner_content h1,
+.hero_banner_sec.slick-active .hero_banner_content p {
+  opacity: 0;
+  animation: fadeInUpSD 1s forwards ease-out !important;
+}
+
+.hero_banner_sec.slick-active .hero_banner_content h1,
+.hero_banner_sec.slick-active .hero_banner_content p {
+  opacity: 0;
+  animation: fadeInUpSD 1s 1s forwards;
+}
+
+@keyframes fadeInUpSD {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) !important;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) !important;
   }
 }
